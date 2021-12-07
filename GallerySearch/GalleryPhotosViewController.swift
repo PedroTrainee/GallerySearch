@@ -89,3 +89,27 @@ extension GalleryPhotosViewController {
         return cell
     }
 }
+
+//MARK: - UICollectionViewDelegateFlowLayout
+
+extension GalleryPhotosViewController: UICollectionViewDelegateFlowLayout {
+    //Size of a given cell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //Total amount of space taken up by padding
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+      }
+      
+    //Returns the spacing between the cells, headers and footers
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+      
+    //Controling the space between each line in the layout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
+}
