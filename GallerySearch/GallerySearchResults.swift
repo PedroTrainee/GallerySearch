@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct GallerySearchResults {
+    let searchTerm: String
+    let searchResults: [GalleryPhoto]
+}
