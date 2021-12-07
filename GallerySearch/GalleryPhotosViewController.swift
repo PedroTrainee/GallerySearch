@@ -82,11 +82,28 @@ extension GalleryPhotosViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searches[section].searchResults.count
     }
-    //Placeholder method to return a blank cell, if i didin't register a cell with reuseIdentifier it will cause a runtime error
+    //Placeholder method to return GalleryPhotoCell, if i didin't register a cell with reuseIdentifier it will cause a runtime error
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryPhotoCell
+        //GalleryPhoto is representing the photo that will display
+        let galleryPhoto = photo(for: indexPath)
+        cell.backgroundColor = .white
+        //Populate the image view with thumbnail
+        cell.imageView.image = galleryPhoto.thumbnail
         return cell
+    }
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let detailsPhotoViewController = self.storyboard?.instantiateViewController(
+            withIdentifier: "DetailsPhotoViewControllerID") as! DetailsPhotoViewController
+        detailsPhotoViewController.selectedPhoto = photo(for: indexPath)
+        
+        self.navigationController?.pushViewController(detailsPhotoViewController, animated: true)
+//        self.navigationController?.present(detailsPhotoViewController, animated: true)
+        
+        
     }
 }
 
