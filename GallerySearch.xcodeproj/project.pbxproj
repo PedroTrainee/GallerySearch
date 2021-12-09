@@ -47,6 +47,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE9D2B022761E5C3006D0B94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C72A1275F5B960034CB8A /* GalleryPhotoCell.swift */,
+				CEC7CBD4275E71730014E161 /* GallerySearchResults.swift */,
+				CEC7CBD2275E71630014E161 /* GalleryPhoto.swift */,
+				CEC7CBD0275E71560014E161 /* Gallery.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE9D2B032761E5D0006D0B94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEC7CBC2275E71280014E161 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE9D2B042761E5D7006D0B94 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C72A3275F78310034CB8A /* DetailsPhotoViewController.swift */,
+				CEC7CBD6275EB0340014E161 /* GalleryPhotosViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CEC7CBB0275E71280014E161 = {
 			isa = PBXGroup;
 			children = (
@@ -66,18 +94,14 @@
 		CEC7CBBB275E71280014E161 /* GallerySearch */ = {
 			isa = PBXGroup;
 			children = (
+				CE9D2B022761E5C3006D0B94 /* Model */,
+				CE9D2B032761E5D0006D0B94 /* View */,
+				CE9D2B042761E5D7006D0B94 /* Controller */,
 				CEC7CBBC275E71280014E161 /* AppDelegate.swift */,
 				CEC7CBBE275E71280014E161 /* SceneDelegate.swift */,
-				CEC7CBC2275E71280014E161 /* Main.storyboard */,
-				CE7C72A1275F5B960034CB8A /* GalleryPhotoCell.swift */,
-				CEC7CBD6275EB0340014E161 /* GalleryPhotosViewController.swift */,
 				CEC7CBC5275E71290014E161 /* Assets.xcassets */,
 				CEC7CBC7275E71290014E161 /* LaunchScreen.storyboard */,
 				CEC7CBCA275E71290014E161 /* Info.plist */,
-				CEC7CBD0275E71560014E161 /* Gallery.swift */,
-				CEC7CBD2275E71630014E161 /* GalleryPhoto.swift */,
-				CEC7CBD4275E71730014E161 /* GallerySearchResults.swift */,
-				CE7C72A3275F78310034CB8A /* DetailsPhotoViewController.swift */,
 			);
 			path = GallerySearch;
 			sourceTree = "<group>";

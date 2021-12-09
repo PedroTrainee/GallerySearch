@@ -20,7 +20,7 @@ final class GalleryPhotosViewController: UICollectionViewController {
     private var searches: [GallerySearchResults] = []
     //Reference to the object that searches
     private let gallery = Gallery()
-    private let itemsPerRow: CGFloat = 3
+    private let itemsPerRow: CGFloat = 2
 }
 
 private extension GalleryPhotosViewController {
